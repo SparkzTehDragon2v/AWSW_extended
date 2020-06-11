@@ -20,7 +20,7 @@ scene town2 with dissolveslow
 
 m "I was on my way to the hatchery when I heard a voice call out to me."
 
-"???" "Hello there!"
+"???" "Hello there, acquaintance!"
 
 m "I turned around to see an unfamiliar face before me."
 
@@ -103,6 +103,7 @@ menu:
         Kv normal "Sure. See ya!"
 
         $ kevinavailable = True
+        $ kevinunplayed = False
     "Excuse yourself.":
 
 

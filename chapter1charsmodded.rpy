@@ -60,11 +60,11 @@ label chapter1charsmodded:
                 jump sebastian
 
 ##            "[Show More.]":
-            "Take a walk." if kevinavailable:
+            "Take a walk." if kevinunplayed:
                 play sound "fx/steps/clean2.wav"
                 stop music fadeout 1.0
-                $ chap1picka = "Kevin"
-                jump kevinext
+                $ chap1picka = "kevin"
+                jump KevinExtended
 
 ##                            "[Go back.]"
 ##                                jump chapter1charsmodding
@@ -117,12 +117,18 @@ label chapter1charsmodded:
                 $ chap1pickb = "sebastian"
                 jump sebastian
 
-            "Take a walk." if kevinavailable:
+            "Take a walk." if kevinunplayed:
                 play sound "fx/steps/clean2.wav"
                 stop music fadeout 1.0
-                $ chap1pickb = "Kevin"
-                jump kevinext
-
+                $ chap1pickb = "kevin"
+                jump KevinExtended
+                
+            "Meet with Kevin." if kevinavailable:
+                play sound "fx/steps/cean2.wav"
+                stop music fadeout 1.0
+                $ chap1pickb = "kevin"
+                jump xkevin
+                
             "Get some well deserved rest.":
 
 
