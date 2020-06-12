@@ -104,6 +104,9 @@ menu:
 
         $ kevinavailable = True
         $ kevinunplayed = False
+        $ kevininvited = True
+        $ chapter1csplayed += 1
+        $ kvextpoints += 3
     "Excuse yourself.":
 
 
@@ -111,6 +114,10 @@ menu:
 
         Kv ramble "Alright, no problem. See ya!"
 
+        $ kevinavailable = False
+        $ kevinunplayed = False
+        $ kevininvited = False
+        $ chapter1csplayed += 1
 
 # scene black with dissolvemed
 
@@ -120,7 +127,7 @@ scene town2 at Pan ((0, 0), (0, 180), 3.0) with dissolveslow
 
 stop music fadeout 1.0
 
-scene black with dissolvemed
+scene o with dissolvemed
 
 $ renpy.pause (1.0)
 

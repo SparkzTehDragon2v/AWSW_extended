@@ -6,7 +6,9 @@ label chapter1charsmodded:
     if persistent.endingsseen > 0:
 
         $ sebastianavailable = True
-        $ kevinavailable = True
+        $ kevinunplayed = True
+        $ kevininvited = False
+        
 
     if sebastianunplayed == False:
 
@@ -14,6 +16,7 @@ label chapter1charsmodded:
 
     if kevinunplayed == False:
         $ kevinavailable = False
+        $ kevininvited = False
 
     if chapter1csplayed == 0:
 
@@ -60,7 +63,7 @@ label chapter1charsmodded:
                 jump sebastian
 
 ##            "[Show More.]":
-            "Take a walk." if kevinunplayed:
+            "Take a walk." if kevinavailable:
                 play sound "fx/steps/clean2.wav"
                 stop music fadeout 1.0
                 $ chap1picka = "kevin"
@@ -123,15 +126,13 @@ label chapter1charsmodded:
                 $ chap1pickb = "kevin"
                 jump KevinExtended
                 
-            "Meet with Kevin." if kevinavailable:
+            "Meet with Kevin." if kevininvited:
                 play sound "fx/steps/cean2.wav"
                 stop music fadeout 1.0
                 $ chap1pickb = "kevin"
-                jump xkevin
+                jump k1chap1
                 
             "Get some well deserved rest.":
-
-
                 $ chap1pickb = "none"
                 m "In the end, I decided to spend the day relaxing in my apartment. I didn't know when things would start to pick up again, so I figured it would be better to get some rest as long as I still could."
                 jump chapter2
