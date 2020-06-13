@@ -1,8 +1,13 @@
+## Within this Label Players will be able to enjoy and play the Kevin Extension
+## You are able to skip for now but you will need to make sure that you don't
+## come across Kevin again during the Chapter 4 Hatchery route. Prevent yourself
+## from doing so and it will be a bit less confusing for the ModUser.
+label kevinchapter1_1:
 
-label k1chap1:
-
-$ kevinunplayed = False
+## Requried Globals.
 $ kevinavailable = True
+$ kevin1ext = None
+$ MeetKevin += 0
 if chapter4unplayed == False:
 
     $ save_name = (_("Chapter 4 - Kevin"))
@@ -56,10 +61,6 @@ if persistent.playedkevin == True:
 
     play sound "fx/system3.wav"
 
-##    call syscheck from _call_syscheck_62
-##
-##    call skiptut from _call_skiptut_15
-
     if skipbeginning == False:
 
         if system == "normal":
@@ -100,7 +101,6 @@ if persistent.playedkevin == True:
             $ renpy.pause (1.0)
 
             $ persistent.skipnumber += 1
-##            call skipcheck from _call_skipcheck_15
 
             show o2 at Pan((0, 250), (0, 250), 0.1)
             show kevin normal
@@ -611,6 +611,10 @@ menu:
 
         Kv normal "Oh, I will."
 
+        scene black with dissolvemed
+        $ renpy.pause (0.5)
+        scene o at Pan((0, 250), (0, 250), 0.1) with dissolvemed
+
         if persistent.playedkevin == False:
 
             $ persistent.playedkevin = True
@@ -618,8 +622,6 @@ menu:
             $ achievement.grant("The Student")
 
             $ persistent.achievements += 1
-
-##            call syscheck from _call_syscheck_63
 
             $ mp.playedkevin = True
             $ mp.save()
@@ -629,19 +631,30 @@ menu:
             if system == "normal":
 
                 s "You met with Kevin!"
+                scene black with dissolvemed
+                $ renpy.pause (0.5)
+                scene o at Pan((0, 250), (0, 250), 0.1) with dissolvemed
 
             elif system == "advanced":
 
                 s "You met with Kevin and learned a lot about city and college life. Congratulations."
+                scene black with dissolvemed
+                $ renpy.pause (0.5)
+                scene o at Pan((0, 250), (0, 250), 0.1) with dissolvemed
             else:
 
 
                 s "You met with Kevin and learned a lot about city and college life. Now you're prepared for a possible life at dragon college, I guess."
-
-
-
+                $ MeetKevin += 1
+                scene black with dissolvemed
+                $ renpy.pause (0.5)
+                scene o at Pan((0, 250), (0, 250), 0.1) with dissolvemed
 
         stop music fadeout 2.0
+        
+        scene black with dissolvemed
+        
+        scene o at Pan((0, 250), (0, 250), 0.1) with dissolvemed
 
         if chapter4unplayed == False:
 
@@ -656,8 +669,10 @@ menu:
             jump chapter2chars
         else:
 
-
-            jump chapter1chars
+            scene black with dissolvemed
+            $ renpy.pause (0.5)
+            scene o at Pan((0, 250), (0, 250), 0.1) with dissolvemed
+            jump chapter1charsmodded
     "Well, you better get going, then.":
 
 
@@ -692,6 +707,10 @@ menu:
 
         $ renpy.pause (2.0)
 
+##        scene black with dissolvemed
+##        $ renpy.pause (0.5)
+##        scene o at Pan((0, 250), (0, 250), 0.1) with dissolvemed
+
         if persistent.playedkevin == False:
 
             $ persistent.playedkevin = True
@@ -699,8 +718,6 @@ menu:
             $ achievement.grant("The Student")
 
             $ persistent.achievements += 1
-
-##            call syscheck from _call_syscheck_64
 
             $ mp.playedkevin = True
             $ mp.save()
@@ -730,9 +747,15 @@ menu:
         elif chapter2unplayed == False:
 
             jump chapter2chars
+
         else:
-
-
+## This will not affect any other character's routes for chapter 1, as for the Main
+## Character they will have the option to go back and spend time with the other characters
+## other than JUST Kevin for this particular route that is. Make sure you do not reselect
+## Kevin or it may become a bit more difficult.
+            scene black with dissolvemed
+            $ renpy.pause (0.5)
+            scene o at Pan((0, 250), (0, 250), 0.1) with dissolvemed
             jump chapter1charsmodded
 
 

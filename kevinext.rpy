@@ -13,12 +13,19 @@ label KevinExtended:
         $ save_name = "Chapter 1 - KevinExtended - Start"
 
 $ kvextpoints = 0
+$ MeetKevin = 0
 
 play music "mx/dash.ogg" fadein 2.0
 
+m "I decided to leave the apartment after Bryce escorted me. After all of what has happened today, I had to get out of the apartment someway or another and take a breather."
+
+m "As I walked out of the apartment I chose to go to Tatsu Park to relax and take my mind off of things for the time being."
+
+m "When I arrived it was a rather great choice."
+
 scene town2 with dissolveslow
 
-m "I was on my way to the hatchery when I heard a voice call out to me."
+m "I looked around Tatsu Park when I heard a voice call out to me."
 
 "???" "Hello there, acquaintance!"
 
@@ -102,11 +109,13 @@ menu:
 
         Kv normal "Sure. See ya!"
 
-        $ kevinavailable = True
+##        $ kevinavailable = True
         $ kevinunplayed = False
         $ kevininvited = True
-        $ chapter1csplayed += 1
+##        $ chapter1csplayed += 1
         $ kvextpoints += 3
+        $ MeetKevin += 1
+        
     "Excuse yourself.":
 
 
@@ -117,7 +126,7 @@ menu:
         $ kevinavailable = False
         $ kevinunplayed = False
         $ kevininvited = False
-        $ chapter1csplayed += 1
+##        $ chapter1csplayed += 1
 
 # scene black with dissolvemed
 
@@ -129,6 +138,10 @@ stop music fadeout 1.0
 
 scene o with dissolvemed
 
+m "I spent my time reconsidering what I would be doing today and with that, I decided to go meet with Kevin this afternoon."
+
+m "I prepared my apartment for it to look nice and rather great to see."
 $ renpy.pause (1.0)
 
-jump chapter1charsmodded
+
+jump kevinchapter1_1

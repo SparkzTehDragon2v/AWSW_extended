@@ -17,21 +17,23 @@ class AWSWMod(Mod):
         return ("KevinExtended", "v0.1", "SparkzTehDragon")
 
     def mod_load(self):
-#        ml.search_peak_if(modast.find_say("Hello there!", ast.Scene, 0)
-        KvSource = modast.find_label("chapter1charsmodded")
-        hook = modast.find_menu("Meet with Sebastian.")[0]
-        print KvSource
-        print hook
+        from modloader.modgame import base, AWSWHomeHook
 
+        home_hook = AWSWHomeHook(base)        
+        home_hook1 = ml.get_home_hook()
 
-        modast.add_menu_option(hook, "Take a walk.", KvSource)
-
+        KvScene = modast.find_label("chapter1charsmodded")
+        KvScene_initialize = modast.find_label("KevinExtended")
+##        hook = modast.find_menu("Meet with Sebastian.")
+        home_hook.hook_chapter_1(KvScene_initialize)
+##        home_hook.add_route("Meet with Kevin", KvScene, "MeetKevin == 1 and kvextpoints < 3") ## "(not sebastianunplayed) and kevin1ext is None"
+##        print KvScene
+##        print hook        
+##        modast.add_menu_option(hook, "Take a walk.", KvScene)
+##        home_hook.add_route("Take a walk.", modast.find_label("chapter1charsmodded"), "MeetKevin == 0 and kvextpoints == 0")
         menu = modast.get_slscreen("main_menu")
         addition = modast.get_slscreen("KevinExtended_main_menu")
-
-
-
-        menu.children.append(addition.children[0])
+##        menu.children.append(addition.children[0])
 
     def mod_complete(self):
         pass
