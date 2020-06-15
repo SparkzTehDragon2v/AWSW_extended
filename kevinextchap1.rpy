@@ -24,11 +24,15 @@ else:
 
     $ save_name = (_("Chapter 1 - Kevin"))
 
+
+
 scene black with dissolvemed
 $ renpy.pause (0.5)
 scene o at Pan((0, 250), (0, 250), 0.1) with dissolvemed
 
 $ renpy.pause (0.5)
+
+m "I was interrupted by the doorbell."
 
 play sound "fx/door/doorbell.wav"
 $ renpy.pause(1.0)
@@ -40,6 +44,18 @@ play sound "fx/door/handle.wav"
 $ renpy.pause(1.0)
 
 play music "mx/dash.ogg" fadein 2.0
+
+# ==============================================================================================================================
+#
+# Kevin: Kevin will start talking to the MC once he enters the house and will not go to the portal this time to be shown
+# once the Kevin has finished his small introduction about the full extent why he is recruiting students to apply for college
+# Kevin will then tone it down to where he focuses on the MC's wants. Of course he will still be rambling away at certain
+# things.
+#
+#
+#
+#
+
 
 show kevin normal with dissolve
 
@@ -157,11 +173,21 @@ c "Well, I'm glad they are taking this matter seriously."
 
 Kv ramble "They certainly are."
 
-c "I'd like to know more about these cities you talked about, though."
+Kv normal with dissolve
 
-Kv normal "Well, I can only speak about the one I live in, but what do you want to know?"
+Kv "Besides my summer job, I believe it is your turn to speak. You didn't just invite me to your place for me to talk about the colleges here. So, what do you have in mind, [player_name]?"
 
-c "I only really have this town as a point of reference, so why don't you tell me about what's different?"
+c "Well, it's more of a question really."
+
+Kv ramble with dissolve
+
+Kv "I'm listening."
+
+Kv normal with dissolve
+
+c "So, we could go find something to do together in the meantime so you can definitely take a break from you recruitment. I think you've done pretty well so far."
+
+Kv ramble "Thank you, [player_name]. That means something fascin
 
 Kv face "Gee, that's only pretty much everything."
 

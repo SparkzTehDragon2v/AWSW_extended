@@ -1,4 +1,9 @@
 
+
+
+
+
+
 label KevinExtended:
     if chapter4unplayed == False:
         $ save_name = "Chapter 4 - KevinExtended - Start"
@@ -93,9 +98,13 @@ menu:
     "Invite him.":
 
 
-        c "Why don't you come over to my place later? I'd love to hear more about what college is all about in this world."
+        c "Why don't you come over to my place later? I'd enjoy talking to you more. Even if that is the case, we could do some pretty interesting stuff if you are interested that is."
 
-        Kv ramble "Then you found the right person for the job."
+        Kv brow "You actually want to spend time with a college student recruiter for Midwest Institution?"
+
+        c "Of course that's what I am offering to you right now, however there's a catch..."
+
+        Kv normal with dissolve
 
         c "I can't promise anything right now, but maybe I'll see you another time."
 
@@ -103,7 +112,7 @@ menu:
 
         c "Alright, I'll let you know."
 
-        Kv ramble "I'm here all day today and tomorrow, so it shouldn't be hard to find me."
+        Kv ramble "I'm going to be here for awhile, so I shouldn't be too hard to find me."
 
         c "Great. I have to get going now, but I'll be sure to let you know if anything's up."
 
@@ -140,7 +149,7 @@ scene o with dissolvemed
 
 m "I spent my time reconsidering what I would be doing today and with that, I decided to go meet with Kevin this afternoon."
 
-m "I prepared my apartment for it to look nice and rather great to see."
+m "I sat down on the couch and thought for a moment..."
 $ renpy.pause (1.0)
 
 
