@@ -21,22 +21,40 @@ from modloader.modclass import Mod, loadable_mod
 class AWSWMod(Mod):
     """Adds a follow-up encounter with Kevin"""
     def mod_info(self):
-        return ("KevinExtended", "v0.1", "SparkzTehDragon")
+        return ("KevinExtended", "v0.1.2", "SparkzTehDragon")
 
     def mod_load(self):
         from modloader.modgame import base, AWSWHomeHook
 
         home_hook = AWSWHomeHook(base)        
         home_hook1 = ml.get_home_hook()
+        # chap1_to_chap2 =
+        # chap2_to_chap3 =
+        # 
 
-        KvScene = modast.find_label("chapter1charsmodded")
-        KvScene_initialize = modast.find_label("KevinExtended")
-        # KvScene2 = modast.find_label("chapter2charsmodded")
-        # Kv_c2 = modast.find_label("k2chap2")
-        # Sb_initialize = modast.find_label("")
-        # Sb_date = modast.find_label("sebastian2")
-##        hook = modast.find_menu("Meet with Sebastian.")
+
+        
+# KEVIN EXTENSION 
+        chap2charsmod = modast.find_label("chapter2charsmodded")
+
+        KvScene = modast.find_label("chapter1charsmodded") # |
+        KvScene_initialize = modast.find_label("KevinExtended") # |
+        KvScene2 = modast.find_label("chapter1charsmodded") # |
+        Kv_c2 = modast.find_label("k2chap2") # |
         home_hook.hook_chapter_1(KvScene_initialize)
+# SEBASTIAN EXTENSION
+
+        Sb_initialize = modast.find_label("chapter1charsmodded") # |
+        Sb_date = modast.find_label("sebastianchap2") # |
+        home_hook.hook_chapter_1(Sb_initialize)
+        seb1_meetup_hook = modast.find_menu("I'll take it.")
+        # chap2link = modast.find_label("bryce3")
+        # chap2charsmoddedlink = modast.call_hook(Sb_initialize, chap2charsmod)
+        # home_hook.hook_chapter_1(chap2charsmoddedlink)
+        # home_hook.hook_chapter_1(chap2link)
+## hook = modast.find_menu("Meet with Sebastian.")
+        
+        
 ##        home_hook.add_route("Meet with Kevin", KvScene, "MeetKevin == 1 and kvextpoints < 3") ## "(not sebastianunplayed) and kevin1ext is None"
 ##        print KvScene
 ##        print hook        

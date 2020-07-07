@@ -104,7 +104,7 @@ menu:
 
         c "Of course that's what I am offering to you right now, however there's a catch..."
 
-        Kv normal with dissolve
+        # Kv normal
 
         c "I can't promise anything right now, but maybe I'll see you another time."
 

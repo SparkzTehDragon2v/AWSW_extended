@@ -1,11 +1,14 @@
 
 label chapter1charsmodded:
-
+    $ sebtour = False
+    $ sebxp = 0
+    $ sebPoints = 0
     $ save_name = (_("Chapter 1"))
 
     if persistent.endingsseen > 0:
 
         $ sebastianavailable = True
+        $ sebastian2available = False
         $ kevinunplayed = True
         $ kevininvited = False
         
@@ -13,6 +16,7 @@ label chapter1charsmodded:
     if sebastianunplayed == False:
 
         $ sebastianavailable = False
+        $ sebastian2available = False
 
     if kevinunplayed == False:
         $ kevinavailable = False
@@ -59,7 +63,9 @@ label chapter1charsmodded:
 
             "Meet with Sebastian." if sebastianavailable:
                 stop music fadeout 1.0
+                $ sebastian2unplayed = True
                 $ chap1picka = "sebastian"
+                $ sebPoints += 3
                 jump sebastian
 
 ##            "[Show More.]":
@@ -115,10 +121,19 @@ label chapter1charsmodded:
                 $ chap3picksadine += 2
                 jump adine1
 
-            "Meet with Sebastian." if sebastianavailable:
+            "Meet with Sebastian." if sebastianunplayed:
                 stop music fadeout 1.0
+                $ sebastian2unplayed = True
+                $ sebastian2available = True
                 $ chap1pickb = "sebastian"
+                $ sebPoints += 2
                 jump sebastian
+
+            "Meet with Sebastian." if sebastian2available:
+                stop music fadeout 1.0
+                $ sebastian2unplayed = False
+                $ chap1pickb = "sebastian"
+                jump sebastianchap2
 
 ##            "Take a walk." if kevinunplayed:
 ##                play sound "fx/steps/clean2.wav"

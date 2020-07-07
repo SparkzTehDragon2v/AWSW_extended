@@ -173,23 +173,23 @@ c "Well, I'm glad they are taking this matter seriously."
 
 Kv ramble "They certainly are."
 
-Kv normal with dissolve
+# Kv normal with dissolve
 
 Kv "Besides my summer job, I believe it is your turn to speak. You didn't just invite me to your place for me to talk about the colleges here. So, what do you have in mind, [player_name]?"
 
 c "Well, it's more of a question really."
 
-Kv ramble with dissolve
+# Kv ramble with dissolve
 
 Kv "I'm listening."
 
-Kv normal with dissolve
+# Kv normal with dissolve
 
 c "So, we could go find something to do together in the meantime so you can definitely take a break from you recruitment. I think you've done pretty well so far."
 
-Kv ramble "Thank you, [player_name]. That means something fascin
+Kv ramble "Thank you, [player_name]. That means something fascinating."
 
-Kv face "Gee, that's only pretty much everything."
+Kv face  "Gee, that's only pretty much everything."
 
 Kv normal "Out here, living in general seems to be a lot cheaper than it is in the city, and there is much more room for everything."
 
@@ -732,6 +732,8 @@ menu:
         play sound "fx/door/doorclose3.wav"
 
         $ renpy.pause (2.0)
+        
+        $ kevin2available = True
 
 ##        scene black with dissolvemed
 ##        $ renpy.pause (0.5)
